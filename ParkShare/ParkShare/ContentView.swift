@@ -12,11 +12,12 @@ import Firebase
 struct ContentView: View {
     
     @EnvironmentObject private var authModel: AuthViewModel
+    @StateObject var firestoreManager = FireStoreManager()
         
         var body: some View {
             Group {
                 if authModel.user != nil {
-                    MainView()
+                    MainView().environmentObject(firestoreManager)
                 } else {
                     SignInView()
                 }
@@ -29,6 +30,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(AuthViewModel())
     }
 }

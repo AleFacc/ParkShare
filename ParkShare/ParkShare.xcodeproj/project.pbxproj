@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1B93962ACE97D8000CF021 /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B93952ACE97D8000CF021 /* FireStoreManager.swift */; };
+		3D1B93982ACEB03D000CF021 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B93972ACEB03D000CF021 /* Cars.swift */; };
+		3D1B939A2ACEB1B4000CF021 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B93992ACEB1B4000CF021 /* History.swift */; };
+		3D1B939C2ACEB1DD000CF021 /* MyParks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B939B2ACEB1DD000CF021 /* MyParks.swift */; };
+		3D1B939E2ACEB1FB000CF021 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B939D2ACEB1FB000CF021 /* Search.swift */; };
+		3D1B93A22ACEB21D000CF021 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B93A12ACEB21D000CF021 /* Settings.swift */; };
 		3DF0D5882AC6D11B00A780DD /* ParkShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0D5872AC6D11B00A780DD /* ParkShareApp.swift */; };
 		3DF0D58A2AC6D11B00A780DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0D5892AC6D11B00A780DD /* ContentView.swift */; };
 		3DF0D58C2AC6D11D00A780DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF0D58B2AC6D11D00A780DD /* Assets.xcassets */; };
@@ -46,6 +52,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D1B93952ACE97D8000CF021 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
+		3D1B93972ACEB03D000CF021 /* Cars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
+		3D1B93992ACEB1B4000CF021 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		3D1B939B2ACEB1DD000CF021 /* MyParks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParks.swift; sourceTree = "<group>"; };
+		3D1B939D2ACEB1FB000CF021 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		3D1B93A12ACEB21D000CF021 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		3DF0D5842AC6D11B00A780DD /* ParkShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF0D5872AC6D11B00A780DD /* ParkShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkShareApp.swift; sourceTree = "<group>"; };
 		3DF0D5892AC6D11B00A780DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +136,12 @@
 				3DF0D5D02AC6D25700A780DD /* SignInView.swift */,
 				3DF0D5D22AC6D28A00A780DD /* SignUpView.swift */,
 				3DF0D5D42AC6D2C600A780DD /* MainView.swift */,
+				3D1B93952ACE97D8000CF021 /* FireStoreManager.swift */,
+				3D1B93972ACEB03D000CF021 /* Cars.swift */,
+				3D1B93992ACEB1B4000CF021 /* History.swift */,
+				3D1B939B2ACEB1DD000CF021 /* MyParks.swift */,
+				3D1B939D2ACEB1FB000CF021 /* Search.swift */,
+				3D1B93A12ACEB21D000CF021 /* Settings.swift */,
 			);
 			path = ParkShare;
 			sourceTree = "<group>";
@@ -239,11 +257,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1B939E2ACEB1FB000CF021 /* Search.swift in Sources */,
+				3D1B939A2ACEB1B4000CF021 /* History.swift in Sources */,
 				3DF0D58A2AC6D11B00A780DD /* ContentView.swift in Sources */,
+				3D1B93962ACE97D8000CF021 /* FireStoreManager.swift in Sources */,
 				3DF0D5D52AC6D2C600A780DD /* MainView.swift in Sources */,
 				3DF0D5D32AC6D28A00A780DD /* SignUpView.swift in Sources */,
+				3D1B93A22ACEB21D000CF021 /* Settings.swift in Sources */,
 				3DF0D5882AC6D11B00A780DD /* ParkShareApp.swift in Sources */,
 				3DF0D5D12AC6D25700A780DD /* SignInView.swift in Sources */,
+				3D1B939C2ACEB1DD000CF021 /* MyParks.swift in Sources */,
+				3D1B93982ACEB03D000CF021 /* Cars.swift in Sources */,
 				3DF0D5CF2AC6D16F00A780DD /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
