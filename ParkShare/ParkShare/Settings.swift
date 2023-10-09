@@ -21,37 +21,49 @@ struct Settings: View {
                 )
                 .foregroundColor(Color(red: 0.38, green: 0.24, blue: 0.92))
             NavigationStack{
-                VStack (alignment: .leading, spacing: 40){
-                    HStack{
+                
+                HStack{
+                    
+                    //Image(systemName:"arrowshape.turn.up.right.circle")
+                    Text(authModel.user?.email ?? "<User email>")
                         
-                        Image(systemName:"arrowshape.turn.up.right.circle")
-                        Text("Hi, \(authModel.user?.email ?? "")")
-                             
-                             }
+                }.font(
+                    .system(size: 25)
+                )
+                .foregroundColor(Color(red: 0.38, green: 0.24, blue: 1))
+                .padding(20)
+                
+                VStack (alignment: .leading, spacing: 40){
+                    
                     HStack{
                         NavigationLink(destination: EditProfile()){            Text("Edit profile")
+                            Spacer()
                             Image(systemName:"arrowshape.turn.up.right.circle")
                         }
                     }
                     
                     HStack{
-                        NavigationLink(destination: ChangePassword()){               Text("Change Password")
+                        NavigationLink(destination: ChangePassword()){         Text("Change Password")
+                            Spacer()
                             Image(systemName:"arrowshape.turn.up.right.circle")
                         }
                     }
                     HStack{
                         NavigationLink(destination: Privacy()){            Text("Privacy")
+                            Spacer()
                             Image(systemName:"arrowshape.turn.up.right.circle")
                         }
                         
                     }
                     HStack{
                         NavigationLink(destination: Location()){      Text("Location")
+                            Spacer()
                             Image(systemName:"arrowshape.turn.up.right.circle")
                         }
                     }
                     HStack{
                         Text("Notification")
+                        Spacer()
                         Image(systemName:"arrowshape.turn.up.right.circle")
                         
                     }
@@ -60,7 +72,7 @@ struct Settings: View {
                             authModel.signOut()
                         },
                         label: {
-                            Text("Sign Out")
+                            Text("Sign Out").foregroundColor(.red).bold()
                                 
                         }
                     )
