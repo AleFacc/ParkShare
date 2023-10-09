@@ -11,7 +11,7 @@ struct MyParks: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Text("My Cars")
+                Text("My Parks")
                     .font(
                         .system(size: 40).bold()
                     )
@@ -52,38 +52,54 @@ struct MyParks: View {
 struct AddPark: View {
     @State private var quartiere: String = ""
     @State private var indirizzo: String = ""
-    @State private var costo: String = ""
+    @State private var costo: Double = 0.0
 
     var body: some View {
         Form{
             VStack{
-                HStack{
                     
-                    TextField("", text: $quartiere, prompt: Text("Quartiere*").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
+                List{
+                    Section(header: Text("Dati Parcheggio")){
+                        TextField("", text: $quartiere, prompt: Text("Quartiere")
+                            .foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
                             .padding()
-                }
-                HStack{
+                                                        
+                        TextField("", text: $indirizzo, prompt: Text("Indirizzo")
+                            .foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
+                            .padding()
+                    }
                     
-                    TextField("", text: $indirizzo, prompt: Text("Indirizzo*").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
-                            .padding()
+                    Section(header: Text("Costo")){
+                        HStack{
+                            
+                            Text("\(costo, specifier: "%.2f") (€/h)")
+                                .foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93))
+                                .padding()
+                            
+                            Stepper("", value: $costo, in: 0.0...100.0, step: 0.5)
+                                .foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93))
+                                .padding()
+                            
+                            
+                            
+                        }
+                    }
                 }
-                HStack{
                     
-                    TextField("", text: $costo, prompt: Text("Costo €/h*").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
-                            .padding()
-                }
-                Button(action: SalvaCar){
+                
+                    
+                                    
+                
+                Button(action: SalvaPark){
                     Text("Salva")
-                }.disabled(quartiere.isEmpty || indirizzo.isEmpty || costo.isEmpty)
+                }.disabled(quartiere.isEmpty || indirizzo.isEmpty || costo <= 0 )
                 
-                
-                
-                
+                               
                 }
         }
     }
     
-    func SalvaCar() {
+    func SalvaPark() {
         //Scrittura dati su Firebase
     }
 }

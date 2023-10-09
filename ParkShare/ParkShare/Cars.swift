@@ -62,16 +62,19 @@ struct AddCar: View {
     var body: some View {
         Form{
             VStack{
-                HStack{
+                
+                List{
+                    Section(header: Text("Dati Auto")){
+                        TextField("", text: $modello, prompt: Text("Modello").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
+                                .padding()
                     
-                    TextField("", text: $modello, prompt: Text("Modello*").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
-                            .padding()
+                        
+                        TextField("", text: $targa, prompt: Text("Targa").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
+                                .padding()
+                    }
                 }
-                HStack{
                     
-                    TextField("", text: $targa, prompt: Text("Targa*").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
-                            .padding()
-                }
+                
                 Button(action: SalvaCar){
                     Text("Salva")
                 }.disabled(modello.isEmpty || targa.isEmpty)

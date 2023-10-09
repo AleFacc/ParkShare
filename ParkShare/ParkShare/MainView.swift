@@ -108,17 +108,17 @@ struct MainView: View {
                 Cars()
                     .tabItem{
                         Image(systemName: "car.fill")
-                        Text("Your car")
+                        Text("My Car")
+                    }
+                MyParks()
+                    .tabItem{
+                        Image(systemName: "p.circle.fill")
+                        Text("My Parks")
                     }
                 History()
                     .tabItem{
                         Image(systemName: "timer")
                         Text("History")
-                    }
-                MyParks()
-                    .tabItem{
-                        Image(systemName: "plus.circle.fill")
-                        Text("My Parks")
                     }
             }
             .onAppear(){    //colore sfondo TabBar
