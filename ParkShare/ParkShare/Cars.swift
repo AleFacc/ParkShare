@@ -26,20 +26,19 @@ struct Cars: View {
                     }
                 }.padding(30)
                 
-                Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: 375, height: 132)
-                .background(Color(red: 0.4, green: 0.42, blue: 0.93))
-                .cornerRadius(30)
-                .shadow(color: Color(red: 0.4, green: 0.42, blue: 0.93).opacity(0.2), radius: 15, x: 0, y: 2)
-                .overlay(
-                    VStack(spacing: 20){
-                        
-                        Text("Dati auto")   //Creare una struct per poterla utilizzare N volte, tramite forEach in lettura da Firebase
-                        
-                        
-                    }.foregroundColor(.white)
-                )
+                ScrollView(showsIndicators: false) {
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                    DatiAuto()
+                }
+                               
                 
                 Spacer()
                 
@@ -49,6 +48,25 @@ struct Cars: View {
     
 }
 
+
+struct DatiAuto: View {
+    
+    var body: some View {
+        Rectangle() //Creare una struct per poter utilizzare il rettangolo N volte, tramite un forEach in lettura da Firebase
+        .foregroundColor(.clear)
+        .frame(width: 375, height: 132)
+        .background(Color(red: 0.4, green: 0.42, blue: 0.93))
+        .cornerRadius(30)
+        .shadow(color: Color(red: 0.4, green: 0.42, blue: 0.93).opacity(0.2), radius: 15, x: 0, y: 2)
+        .overlay(
+            VStack(spacing: 20){
+                
+                Text("Dati auto dal db")
+                
+            }.foregroundColor(.white)
+        )
+    }
+}
 
 
 struct AddCar: View {
@@ -60,12 +78,12 @@ struct AddCar: View {
             VStack{
                 HStack{
                     
-                    TextField("", text: $modello, prompt: Text("Modello").foregroundColor(Color.red))
+                    TextField("", text: $modello, prompt: Text("Modello*").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
                             .padding()
                 }
                 HStack{
                     
-                    TextField("", text: $targa, prompt: Text("Targa").foregroundColor(Color.red))
+                    TextField("", text: $targa, prompt: Text("Targa*").foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93)))
                             .padding()
                 }
                 Button(action: SalvaCar){

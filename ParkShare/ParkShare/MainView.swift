@@ -12,8 +12,7 @@ struct MainView: View {
     @EnvironmentObject private var authModel: AuthViewModel
     @State private var search: String = ""
     @EnvironmentObject var firestoreManager: FireStoreManager
-    
-    
+        
     
     var body: some View {
         NavigationStack{
@@ -78,8 +77,8 @@ struct MainView: View {
                     VStack(spacing: 20){
                         Text("Your Reservation")
                         
-                        List{
-                            /*ForEach(firestoreManager.prenotazioniID, id: \.self) { result in
+                        List{/*
+                            ForEach(firestoreManager.prenotazioniID, id: \.self) { result in
                              Text("Id Parcheggio: \(result)")
                              }*/
                         }
@@ -122,6 +121,11 @@ struct MainView: View {
                         Text("My Parks")
                     }
             }
+            .onAppear(){    //colore sfondo TabBar
+                UITabBar.appearance().backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            }               //colore TabItem selezionato
+            .accentColor(Color(red: 0.4, green: 0.42, blue: 0.93))
+            
             
         }
     }
