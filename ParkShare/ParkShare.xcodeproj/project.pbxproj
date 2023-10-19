@@ -13,6 +13,8 @@
 		3D1B939C2ACEB1DD000CF021 /* MyParks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B939B2ACEB1DD000CF021 /* MyParks.swift */; };
 		3D1B939E2ACEB1FB000CF021 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B939D2ACEB1FB000CF021 /* Search.swift */; };
 		3D1B93A22ACEB21D000CF021 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B93A12ACEB21D000CF021 /* Settings.swift */; };
+		3D49DD012AE118F200E67991 /* Prenotazione.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DD002AE118F200E67991 /* Prenotazione.swift */; };
+		3D49DD032AE12A1000E67991 /* Parcheggio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DD022AE12A1000E67991 /* Parcheggio.swift */; };
 		3DB520BE2AD4491500010533 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB520BD2AD4491500010533 /* EditProfile.swift */; };
 		3DB520C02AD449C200010533 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB520BF2AD449C200010533 /* ChangePassword.swift */; };
 		3DB520C22AD44A0200010533 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB520C12AD44A0200010533 /* Location.swift */; };
@@ -62,6 +64,8 @@
 		3D1B939B2ACEB1DD000CF021 /* MyParks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParks.swift; sourceTree = "<group>"; };
 		3D1B939D2ACEB1FB000CF021 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		3D1B93A12ACEB21D000CF021 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		3D49DD002AE118F200E67991 /* Prenotazione.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prenotazione.swift; sourceTree = "<group>"; };
+		3D49DD022AE12A1000E67991 /* Parcheggio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parcheggio.swift; sourceTree = "<group>"; };
 		3DB520BD2AD4491500010533 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		3DB520BF2AD449C200010533 /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		3DB520C12AD44A0200010533 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				3DB520BF2AD449C200010533 /* ChangePassword.swift */,
 				3DB520C12AD44A0200010533 /* Location.swift */,
 				3DB520C32AD44A3C00010533 /* Privacy.swift */,
+				3D49DD002AE118F200E67991 /* Prenotazione.swift */,
+				3D49DD022AE12A1000E67991 /* Parcheggio.swift */,
 			);
 			path = ParkShare;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 				3D1B939A2ACEB1B4000CF021 /* History.swift in Sources */,
 				3DF0D58A2AC6D11B00A780DD /* ContentView.swift in Sources */,
 				3D1B93962ACE97D8000CF021 /* FireStoreManager.swift in Sources */,
+				3D49DD032AE12A1000E67991 /* Parcheggio.swift in Sources */,
 				3DF0D5D52AC6D2C600A780DD /* MainView.swift in Sources */,
 				3DF0D5D32AC6D28A00A780DD /* SignUpView.swift in Sources */,
 				3DB520C42AD44A3C00010533 /* Privacy.swift in Sources */,
@@ -280,6 +287,7 @@
 				3DB520C22AD44A0200010533 /* Location.swift in Sources */,
 				3D1B93A22ACEB21D000CF021 /* Settings.swift in Sources */,
 				3DF0D5882AC6D11B00A780DD /* ParkShareApp.swift in Sources */,
+				3D49DD012AE118F200E67991 /* Prenotazione.swift in Sources */,
 				3DF0D5D12AC6D25700A780DD /* SignInView.swift in Sources */,
 				3D1B939C2ACEB1DD000CF021 /* MyParks.swift in Sources */,
 				3DB520BE2AD4491500010533 /* EditProfile.swift in Sources */,

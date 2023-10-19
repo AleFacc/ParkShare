@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct EditProfile: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("spunta_verde")
+                .resizable()
+                .frame(width: 80, height: 80)
+            Text("Email inviata con successo")
+                .bold()
+        }
+        
     }
 }
 

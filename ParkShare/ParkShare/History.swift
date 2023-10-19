@@ -34,7 +34,8 @@ struct History: View {
                             .foregroundColor(.white)
                             .font(.headline)
                             .offset(x: -145, y: -25)
-
+                        
+                       
                     }
                 )
                 .overlay(

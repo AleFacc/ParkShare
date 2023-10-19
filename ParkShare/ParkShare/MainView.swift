@@ -10,8 +10,10 @@ import SwiftUI
 struct MainView: View {
     
     @EnvironmentObject private var authModel: AuthViewModel
+    //@ObservedObject var authModel = AuthViewModel()
+    @ObservedObject var viewModel = FireStoreManager()
     @State private var search: String = ""
-    @EnvironmentObject var firestoreManager: FireStoreManager
+    //@EnvironmentObject var firestoreManager: FireStoreManager
         
     
     var body: some View {
@@ -77,11 +79,25 @@ struct MainView: View {
                     VStack(spacing: 20){
                         Text("Your Reservation")
                         
-                        List{/*
+                        /*List{/*
                             ForEach(firestoreManager.prenotazioniID, id: \.self) { result in
                              Text("Id Parcheggio: \(result)")
                              }*/
-                        }
+                        }*/
+                        List(viewModel.prenotazioni) { prenotazione in
+                                VStack(alignment: .leading) {
+                                    Text(prenotazione.id)
+                                    .font(.headline)
+                                    Text(prenotazione.emailAcquirente)
+                                    .font(.subheadline)
+                                    Text(prenotazione.idParcheggio)
+                                    .font(.subheadline)
+                                }
+                              }
+                              .navigationBarTitle("Prenotazioni")
+                              .onAppear() { // (3)
+                                  self.viewModel.fetchData(email: authModel.user?.email ?? "")
+                              }
                         
                     }
                     
@@ -131,11 +147,4 @@ struct MainView: View {
     }
     
 }
-    
-    struct MainView_Previews: PreviewProvider {
-        static var previews: some View {
-            MainView().environmentObject(FireStoreManager())
-                .environmentObject(AuthViewModel())
-        }
-    }
 

@@ -17,7 +17,7 @@ struct ContentView: View {
         var body: some View {
             Group {
                 if authModel.user != nil {
-                    MainView().environmentObject(firestoreManager)
+                    MainView().environmentObject(authModel)
                 } else {
                     SignInView()
                 }
@@ -26,10 +26,4 @@ struct ContentView: View {
             }
         }
     
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environmentObject(AuthViewModel())
-    }
 }

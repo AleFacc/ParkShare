@@ -9,91 +9,94 @@ import SwiftUI
 
 struct Settings: View {
     @EnvironmentObject private var authModel: AuthViewModel
-    let paddingCharacter = " "
-    @EnvironmentObject var firestoreManager: FireStoreManager
-    
+    @EnvironmentObject var firestoreManager:  FireStoreManager
+    @State private var isNotificationEnabled = true
+    @State private var isLocationEnabled = true
+
     var body: some View {
-        
-        VStack{
+        VStack {
             Text("Settings")
-                .font(
-                    .system(size: 40).bold()
-                )
+                .font(.system(size: 40).bold())
                 .foregroundColor(Color(red: 0.38, green: 0.24, blue: 0.92))
-            NavigationStack{
-                
-                HStack{
-                    
-                    //Image(systemName:"arrowshape.turn.up.right.circle")
+
+            NavigationStack {
+                HStack {
                     Text(authModel.user?.email ?? "<User email>")
-                        
-                }.font(
-                    .system(size: 25)
-                )
+                }
+                .font(.system(size: 25))
                 .foregroundColor(Color(red: 0.38, green: 0.24, blue: 1))
                 .padding(20)
-                
-                VStack (alignment: .leading, spacing: 40){
-                    
-                    HStack{
-                        NavigationLink(destination: EditProfile()){            Text("Edit profile")
+
+                VStack(alignment: .leading, spacing: 40) {
+                    SectionWithBackground {
+                        NavigationLink(destination: EditProfile()) {
+                            Text("Change Email")
                             Spacer()
-                            Image(systemName:"arrowshape.turn.up.right.circle")
+                            Image(systemName: "arrowshape.turn.up.right.circle")
                         }
                     }
-                    
-                    HStack{
-                        NavigationLink(destination: ChangePassword()){         Text("Change Password")
+
+                    SectionWithBackground {
+                        NavigationLink(destination: ChangePassword()) {
+                            Text("Change Password")
                             Spacer()
-                            Image(systemName:"arrowshape.turn.up.right.circle")
+                            Image(systemName: "arrowshape.turn.up.right.circle")
                         }
                     }
-                    HStack{
-                        NavigationLink(destination: Privacy()){            Text("Privacy")
+
+                    SectionWithBackground {
+                        HStack {
+                            Text("Location")
                             Spacer()
-                            Image(systemName:"arrowshape.turn.up.right.circle")
-                        }
-                        
-                    }
-                    HStack{
-                        NavigationLink(destination: Location()){      Text("Location")
-                            Spacer()
-                            Image(systemName:"arrowshape.turn.up.right.circle")
+                            Toggle("", isOn: $isLocationEnabled)
+                                .labelsHidden()
                         }
                     }
-                    HStack{
-                        Text("Notification")
-                        Spacer()
-                        Image(systemName:"arrowshape.turn.up.right.circle")
-                        
+
+                    SectionWithBackground {
+                        HStack {
+                            Text("Notification")
+                            Spacer()
+                            Toggle("", isOn: $isNotificationEnabled)
+                                .labelsHidden()
+                        }
                     }
-                    Button(
-                        action: {
+
+                    SectionWithBackground {
+                        Button(action: {
                             authModel.signOut()
-                        },
-                        label: {
+                        }) {
                             Text("Sign Out").foregroundColor(.red).bold()
-                                
                         }
-                    )
+                    }
+
                     Spacer()
-                    
-                }.font(
-                    .system(size: 30)
-                )
+                }
+                .font(.system(size: 30))
                 .foregroundColor(Color(red: 0.38, green: 0.24, blue: 0.92))
                 .padding(20)
-                
-                
-                
-                
             }
-        }        }
+        }
+    }
 }
 
-    
-        
-    
+struct SectionWithBackground<Content: View>: View {
+    let content: Content
+
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color.gray.opacity(0.2))
+            content
+                .padding()
+        }
+    }
+}
+
 
 
 struct Settings_Previews: PreviewProvider {
