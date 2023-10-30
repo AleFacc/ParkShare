@@ -9,6 +9,10 @@ import SwiftUI
 
 struct Cars: View {
     
+    @EnvironmentObject private var authModel: AuthViewModel
+    //@ObservedObject var authModel = AuthViewModel()
+    @ObservedObject var viewModel = FireStoreManager()
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -27,8 +31,6 @@ struct Cars: View {
                 }.padding(30)
                 
                 ScrollView(showsIndicators: false) {
-                    
-                    //aggiungere condizione: se nel db non sono presenti parcheggi per l'utente, visualizzare messaggio di avviso
                     
                     DatiAuto()
                     DatiAuto()
@@ -108,8 +110,4 @@ struct DatiAuto: View {
 }
 
 
-struct Cars_Previews: PreviewProvider {
-    static var previews: some View {
-        Cars()
-    }
-}
+

@@ -56,6 +56,9 @@ struct MainView: View {
                     
                     VStack (spacing: 20){
                         Text("Search for a parking")
+                            .font(.system(size: 25))
+                            .foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93))
+                            .bold()
                         
                         Rectangle()
                             .foregroundColor(.clear)
@@ -76,8 +79,11 @@ struct MainView: View {
                     }
                     
                     
-                    VStack(spacing: 20){
+                    VStack(spacing: 5){
                         Text("Your Reservation")
+                            .font(.system(size: 25))
+                            .foregroundColor(Color(red: 0.4, green: 0.42, blue: 0.93))
+                            .bold()
                         
                         /*List{/*
                             ForEach(firestoreManager.prenotazioniID, id: \.self) { result in
@@ -85,15 +91,15 @@ struct MainView: View {
                              }*/
                         }*/
                         List(viewModel.prenotazioni) { prenotazione in
-                                VStack(alignment: .leading) {
-                                    Text(prenotazione.id)
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(prenotazione.id)
                                     .font(.headline)
-                                    Text(prenotazione.emailAcquirente)
+                                Text(prenotazione.emailAcquirente)
                                     .font(.subheadline)
-                                    Text(prenotazione.idParcheggio)
+                                Text(prenotazione.idParcheggio)
                                     .font(.subheadline)
-                                }
-                              }
+                            }
+                        }
                               .navigationBarTitle("Prenotazioni")
                               .onAppear() { // (3)
                                   self.viewModel.fetchData(email: authModel.user?.email ?? "")
@@ -101,7 +107,7 @@ struct MainView: View {
                         
                     }
                     
-                    Spacer()
+                    //Spacer()
                     
                     
                 }.toolbar {
